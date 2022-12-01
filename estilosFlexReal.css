@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+/* ESTILOS BASE */
+:root{
+    --color-fondo:hsl(206, 50%, 20%);
+    --color-primario: #406882;
+    --color-secundario: #6998AB;
+    --color-claro: #B1D0E0;
+    --fuente-primaria: 'Poppins', sans-serif;
+    --color-blanco:whitesmoke;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: var(--fuente-primaria);
+}
+h1{
+    font-weight: 800;
+    font-size: calc(1rem + 2vw);
+    margin-bottom: 1.5rem;
+}
+h2{    
+    font-size: calc(1rem +1vw);
+    margin-bottom: 1rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5vw;
+    background-color: var(--color-claro);
+}
+
+/* header */
+header{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(var(--color-fondo), rgba(25, 54, 77, 0.493)), url("FondoFlex.jpg");
+    color: var(--color-blanco);
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 8%;
+    /* color: var(--color-blanco); */
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: inherit;
+}
+.menu a{
+    margin-left: 2.5rem;    
+}
+.menu a:hover{
+    color: var(--color-secundario);
+    transition: .5s ease-in-out;
+}
+.header-content{
+    width: 50%;
+    position: relative;
+    top: 20%;
+    left: 8%;
+}
+/* ABOUT */
+.about-left, .about-mid, .about-right{
+    flex-basis: 33%;
+    padding: 1.5rem;
+}
+.btn, input[type="submit"]{
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 8px 16px;
+    display: inline-block;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.about-b{
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+.about-b-left{
+    flex-basis: 40%;
+}
+.about-b-right{
+    flex-basis: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.row-card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+.card{
+    padding: 2% 8%;
+    color: var(--color-fondo);
+    background-color: var(--color-claro);
+    margin: 1.6rem;
+    width: 40%;
+    text-align: center;
+}
+/* PROCESO */
+
+.process.row{
+    justify-content: center;
+}
+.process-content{
+    margin-top: 100px;
+}
+.progress-bar{
+    width: 80vw;
+    height: 2px;
+    background-color: var(--color-fondo);
+    margin: auto;
+    position: relative;
+}
+.p1, .p2, .p3{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--color-fondo);
+    position: absolute;
+}
+.p1{
+    top: -8px;
+    left: 50px;
+}
+.p2{
+    top: -8px;
+    left: 50%;
+}
+.p3{
+    top: -8px;
+    right: 50px;
+}
+.box1, .box2, .box3{
+    flex-basis: 33%;
+    padding: 1.8rem;
+}
+.box2{
+    text-align: center;
+}
+.box3{
+    text-align: right;
+}
+.op{
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+.op-cont{
+    background-color: var(--color-primario);
+    padding: 4% 8%;
+    margin: 0 1rem;
+}
+.op-cont img{
+    width: 80px;
+    border-radius: 50%;
+}
+
+/* Formulario */
+
+.contact.row{
+    flex-direction: column;
+}
+.contact form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input, textarea{
+    width: 50vw;
+    padding: 10px 20px;
+    margin-bottom: 2rem;
+    border: 2px solid var(--color-fondo);
+    border-radius: 5px;
+    font-family: inherit;
+}
+form input:focus{
+    outline: 3px solid var(--color-secundario);
+}
+
+/*  MEDIA QUERIES */
+
+@media screen and (max-width:768px) {   
+    .row{
+        flex-direction: column;        
+    }
+    nav {
+        flex-direction: column;             
+    }
+    .menu{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu a{
+        margin: 0;
+        display: block;
+        text-align: center;
+    }
+    .header-content {
+        width: 80%;
+        justify-content: flex-start;
+    }
+    .card{
+        width: 100%;
+    }
+    .progress-bar{
+        display: none;
+    }
+    .contact form input,
+    .contact textarea{
+        width: 100%;
+    }
+}
